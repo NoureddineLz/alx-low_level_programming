@@ -1,11 +1,5 @@
-section .data
-    hello db "Hello, Holberton",0
-    format db "%s\n",0
-
-section .text
     global main
-
-extern printf
+     extern printf
 
 main:
 		push rbp
@@ -14,3 +8,4 @@ main:
 		call printf
 		pop rbp
 		ret
+format: db `Hello, Holberton\n`,0
