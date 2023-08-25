@@ -5,13 +5,16 @@
  * free_list - frees a linked list
  * @head: list_t list to be freed
  */
+
 void free_list(list_t *head)
 {
-while (head != NULL)
-{
-list_t *temp = head;
-head = head->next;
+list_t *temp;
 
-free(temp->str);
-free(temp);
+while (head)
+{
+temp = head->next;
+free(head->str);
+free(head);
+head = temp;
+}
 }
