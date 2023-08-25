@@ -16,6 +16,11 @@ if (new_node == NULL)
 {
 return (NULL);
 }
+
+unsigned int len = 0;
+while (str[len])
+len++;
+
 new_node->str = strdup(str);
 if (new_node->str == NULL)
 {
@@ -23,7 +28,9 @@ free(new_node);
 return (NULL);
 }
 
+new_node->len = len;
 new_node->next = NULL;
+
 if (*head == NULL)
 {
 (*head) = new_node;
