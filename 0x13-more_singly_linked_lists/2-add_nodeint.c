@@ -1,13 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct listint_t
-{
-int data;
-struct listint_t *next;
-}
-listint_t;
-
 /**
  * add_nodeint - adds a new node at the beginning of a linked list
  * @head: pointer to the first node in the list
