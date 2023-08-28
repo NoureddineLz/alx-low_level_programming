@@ -9,16 +9,16 @@
  */
 int pop_listint(listint_t **head)
 {
-if (head == NULL || *head == NULL)
-{
-return (0);
-}
+	listint_t *temp;
+	int num;
 
-int data = (*head)->n;
-listint_t *temp = *head;
-*head = (*head)->next; 
+	if (!head || !*head)
+		return (0);
 
-free(temp);
+	num = (*head)->n;
+	temp = (*head)->next;
+	free(*head);
+	*head = temp;
 
-return (data);/*Return the data of the old head node*/
+	return (num);
 }
